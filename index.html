@@ -18,7 +18,7 @@
         .horse {
             position: absolute;
             width: 50px;
-            transition: left 0.5s;
+            transition: left 0.5s, top 0.5s;
         }
         #distance {
             font-size: 24px;
@@ -29,12 +29,25 @@
             color: red;
             margin: 20px 0;
         }
+        .controls {
+            margin: 20px 0;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
     <h1>馬レースゲーム</h1>
+    <div class="controls">
+        <button id="start-btn">スタート</button>
+        <button id="end-btn">終了</button>
+        <button id="result-btn" disabled>結果</button>
+    </div>
     <div id="distance">残り距離: 1000m</div>
-    <div id="countdown">3</div>
+    <div id="countdown" style="display: none;">3</div>
     <div id="race-track">
         <img src="horse1.png" id="horse1" class="horse" style="top: 0; left: 0;">
         <img src="horse2.png" id="horse2" class="horse" style="top: 40px; left: 0;">
@@ -45,12 +58,25 @@
 
     <script>
         let countdown = 3;
+        let raceInterval;
         const countdownElement = document.getElementById('countdown');
         const distanceElement = document.getElementById('distance');
         const horses = document.querySelectorAll('.horse');
-        let raceInterval;
+        const startBtn = document.getElementById('start-btn');
+        const endBtn = document.getElementById('end-btn');
+        const resultBtn = document.getElementById('result-btn');
         
+        startBtn.addEventListener('click', startCountdown);
+        endBtn.addEventListener('click', endRace);
+        resultBtn.addEventListener('click', showResults);
+
         function startCountdown() {
+            countdown = 3;
+            countdownElement.textContent = countdown;
+            countdownElement.style.display = 'block';
+            startBtn.disabled = true;
+            endBtn.disabled = false;
+            resultBtn.disabled = true;
             const countdownInterval = setInterval(() => {
                 countdown--;
                 countdownElement.textContent = countdown;
@@ -68,15 +94,25 @@
                 horses.forEach(horse => {
                     const currentLeft = parseFloat(horse.style.left);
                     const randomSpeed = Math.random() * 10;
+                    const randomDirection = Math.random() > 0.5 ? 1 : -1;
                     horse.style.left = currentLeft + randomSpeed + 'px';
+                    const currentTop = parseFloat(horse.style.top);
+                    const randomVerticalMove = (Math.random() - 0.5) * 20;
+                    horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 160) + 'px';
                 });
                 distance -= 10;
                 distanceElement.textContent = `残り距離: ${distance}m`;
                 if (distance <= 0) {
                     clearInterval(raceInterval);
-                    showResults();
+                    endRace();
                 }
             }, 500);
+        }
+
+        function endRace() {
+            clearInterval(raceInterval);
+            endBtn.disabled = true;
+            resultBtn.disabled = false;
         }
 
         function showResults() {
@@ -91,8 +127,6 @@
             });
             window.open('results.html?results=' + encodeURIComponent(results), '_blank');
         }
-
-        startCountdown();
     </script>
 </body>
 </html>

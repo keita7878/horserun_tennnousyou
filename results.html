@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レース結果</title>
+</head>
+<body>
+    <h1>レース結果</h1>
+    <pre id="results"></pre>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const results = params.get('results');
+        document.getElementById('results').textContent = results;
+    </script>
+</body>
+</html>
