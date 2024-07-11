@@ -38,7 +38,7 @@ function startRace() {
             const randomDirection = Math.random() > 0.5 ? 1 : -1;
             horse.style.left = currentLeft + randomSpeed + 'px';
             const currentTop = parseFloat(horse.style.top);
-            const randomVerticalMove = (Math.random() - 0.5) * 20;
+            const randomVerticalMove = (Math.random() - 0.5) * 5;          //上下のランダム移動
             horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 160) + 'px';
         });
         distance -= 25;
