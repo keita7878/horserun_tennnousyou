@@ -34,20 +34,20 @@ function startRace() {
     raceInterval = setInterval(() => {
         horses.forEach(horse => {
             const currentLeft = parseFloat(horse.style.left);
-            const randomSpeed = Math.random() * 30;
+            const randomSpeed = Math.random() * 25;         //馬のスピード
             const randomDirection = Math.random() > 0.5 ? 1 : -1;
             horse.style.left = currentLeft + randomSpeed + 'px';
             const currentTop = parseFloat(horse.style.top);
-            const randomVerticalMove = (Math.random() - 0.5) * 5;          //上下のランダム移動
-            horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 160) + 'px';
+            const randomVerticalMove = (Math.random() - 0.5) * 4;          //上下のランダム移動
+            horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 600) + 'px';   //上下の最大値
         });
-        distance -= 25;
+        distance -= 10;
         distanceElement.textContent = `残り距離: ${distance}m`;
         if (distance <= 0) {
             clearInterval(raceInterval);
             endRace();
         }
-    }, 500);
+    }, 100);
 }
 
 function endRace() {
