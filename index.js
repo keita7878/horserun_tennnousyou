@@ -59,12 +59,17 @@ function endRace() {
 function showResults() {
     const positions = Array.from(horses).map(horse => ({
         id: horse.id,
+        number: horse.getAttribute('number'), // 'number' 属性を取得
         position: parseFloat(horse.style.left)
     }));
     positions.sort((a, b) => b.position - a.position);
-    let results = '順位:\n';
+    
+    let results = '順位 馬番 馬名\n';
     positions.forEach((pos, index) => {
-        results += `${index + 1}位: ${pos.id}\n`;
+        //スペースを追加して桁を揃える
+        let rank = (index + 1).toString().padStart(2, ' ');
+        results += `${rank}位: ${pos.number}, ${pos.id}\n`;
     });
+
     window.open('results.html?results=' + encodeURIComponent(results), '_blank');
 }
