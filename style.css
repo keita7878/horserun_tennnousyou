@@ -7,7 +7,8 @@ body {
     width: 100%;
     height: 475px;
     border: 2px solid #000;
-    background-color: rgb(153, 240, 124); /* レーストラックの背景色を緑に設定 */
+    background-image:url(kaibahaikei.png);
+    /* background-color: rgb(153, 240, 124); レーストラックの背景色を緑に設定 */
 }
 .horse {
     position: absolute;
@@ -30,5 +31,9 @@ button {
     font-size: 16px;
     padding: 10px 20px;
     margin: 0 10px;
+}
+bg {
+    background:url(kaibahaikei.png);
+    background-repeat: no-repeat;
 }
 
