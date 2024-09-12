@@ -9,7 +9,7 @@ body {
     border: 2px solid #000;
     background-image:url(keibahaikei.png);
     background-size : cover; 
-    /* background-color: rgb(153, 240, 124); レーストラックの背景色を緑に設定 */
+    /* background-color: rgb(153, 240, 124); レーストラックの背景色を緑に設定(コメントアウト化) */
 }
 .horse {
     position: absolute;
@@ -37,4 +37,25 @@ bg {
     background:url(kaibahaikei.png);
     background-repeat: no-repeat;
 }
+#results {
+    text-align: center; /* 中央揃え */
+}
+.extra-large {
+    font-size: 32px; /* 上位3頭をより大きく表示 */
+}
+.large {
+    font-size: 24px; /* 上位5頭を大きく表示 */
+}
+.normal {
+    font-size: 14px; /* それ以降を通常サイズで表示 */
+}
 
+.divider {
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+}
+hr {
+    border: 1px solid black;
+    margin: 5px 0;
+}

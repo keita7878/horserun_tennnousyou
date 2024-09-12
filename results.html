@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>レース結果</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>夢の11レース結果</h1>
-    <pre id="results" number="results"></pre>
+    <div id="results"></div>
 
     <script>
         const params = new URLSearchParams(window.location.search);
         const results = params.get('results');
-        document.getElementById('results').textContent = results;
+        
+        //結果を改行で分割して配列にする
+        const horses = results ? results.split('\n').filter(horse => horse.trim() !== '') : [];
+
+        const resultsContainer = document.getElementById('results');
+
+        //上位5頭までを大きく表示
+        horses.forEach((horse, index) => {
+            const horseElement = document.createElement('div');
+            horseElement.textContent = horse;
+
+            if (index <= 3) {
+                horseElement.classList.add('extra-large'); //上位3頭はより大きく
+            } else if (index <= 5) {
+                horseElement.classList.add('large'); //4位～5位は大きく
+            } else {
+                horseElement.classList.add('normal'); //それ以降は通常サイズ
+            }
+
+            resultsContainer.appendChild(horseElement);
+
+            // 3着の後に線と「馬券内」を追加
+            if (index === 3) {
+                const divider = document.createElement('div');
+                divider.classList.add('divider');
+                divider.innerHTML = '<hr>↑↑↑   馬券内   ↑↑↑<hr>';
+                resultsContainer.appendChild(divider);
+            }
+        });
     </script>
 </body>
 </html>

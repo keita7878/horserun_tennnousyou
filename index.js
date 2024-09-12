@@ -34,12 +34,20 @@ function startRace() {
     raceInterval = setInterval(() => {
         horses.forEach(horse => {
             const currentLeft = parseFloat(horse.style.left);
-            const randomSpeed = Math.random() * 25;         //馬のスピード
-            const randomDirection = Math.random() > 0.5 ? 1 : -1;
+            const randomSpeed = Math.random() * 25; // 馬のスピード
             horse.style.left = currentLeft + randomSpeed + 'px';
+
             const currentTop = parseFloat(horse.style.top);
-            const randomVerticalMove = (Math.random() - 0.5) * 4;          //上下のランダム移動
-            horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 600) + 'px';   //上下の最大値
+            let randomVerticalMove;
+
+            if (horse.id === "ゴールドシップ") {
+                //ゴールドシップだけランダム移動を激しくする
+                randomVerticalMove = (Math.random() - 0.5) * 50; //激しく移動
+            } else {
+                randomVerticalMove = (Math.random() - 0.5) * 4; //他の馬は通常の移動
+            }
+
+            horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 600) + 'px'; // 上下の最大値
         });
         distance -= 10;
         distanceElement.textContent = `残り距離: ${distance}m`;
@@ -50,6 +58,7 @@ function startRace() {
     }, 100);
 }
 
+
 function endRace() {
     clearInterval(raceInterval);
     endBtn.disabled = true;
@@ -59,16 +68,16 @@ function endRace() {
 function showResults() {
     const positions = Array.from(horses).map(horse => ({
         id: horse.id,
-        number: horse.getAttribute('number'), // 'number' 属性を取得
+        number: horse.getAttribute('number'), //'number' 属性を取得
         position: parseFloat(horse.style.left)
     }));
     positions.sort((a, b) => b.position - a.position);
     
-    let results = '順位 馬番 馬名\n';
+    let results = '着順 馬番 馬名\n';
     positions.forEach((pos, index) => {
         //スペースを追加して桁を揃える
         let rank = (index + 1).toString().padStart(2, ' ');
-        results += `${rank}位: ${pos.number}, ${pos.id}\n`;
+        results += `${rank}着: ${pos.number}, ${pos.id}\n`;
     });
 
     window.open('results.html?results=' + encodeURIComponent(results), '_blank');
