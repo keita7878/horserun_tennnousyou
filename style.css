@@ -8,6 +8,7 @@ body {
     height: 475px;
     border: 2px solid #000;
     background-image:url(keibahaikei.png);
+    background-size : cover; 
     /* background-color: rgb(153, 240, 124); レーストラックの背景色を緑に設定 */
 }
 .horse {
