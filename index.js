@@ -49,7 +49,53 @@ function startRace() {
                 if (elapsedTime < 2000) {
                     randomSpeed = Math.random() * 55; // 最初の2秒は速く走る
                 } else {
-                    randomSpeed = Math.random() * 20; // 2秒後は少し遅くなる
+                    randomSpeed = Math.random() * 19; // 2秒後は少し遅くなる
+                }
+            }
+
+            // 10頭目 (ドウデュース) の加速・減速ロジック
+            if (horse.id === "ドウデュース") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            // 13頭目 (べラジオオペラ) の加速・減速ロジック
+            if (horse.id === "べラジオオペラ") {
+                const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
+                if (elapsedTime < 5000) {
+                    randomSpeed = Math.random() * 30; // 最初の5秒は速く走る
+                } else {
+                    randomSpeed = Math.random() * 20; // 5秒後は少し遅くなる
+                }
+            }
+
+            // 15頭目 (イクイノックス) の加速・減速ロジック
+            if (horse.id === "イクイノックス") {
+                randomSpeed = Math.random() * 26; // イクイノックスのみ少し早い
+            }
+
+
+            // 16頭目 (ディープインパクト) の加速・減速ロジック
+            if (horse.id === "ディープインパクト") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3500) {
+                    randomSpeed = Math.random() * 10; // 最初の4秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 35; // 4秒後は速く走る
+                }
+            }
+
+            // 17頭目 (ダイワスカーレット) の加速・減速ロジック
+            if (horse.id === "ダイワスカーレット") {
+                const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 37; // 最初の3秒は速く走る
+                } else {
+                    randomSpeed = Math.random() * 22; // 3秒後は少し遅くなる
                 }
             }
 
@@ -61,7 +107,7 @@ function startRace() {
                     slowDownStartTime = Date.now(); // 減速開始の時刻を記録
                 } else if (slowDownOccurred) {
                     const elapsedTime = Date.now() - slowDownStartTime; // 減速開始からの経過時間
-                    if (elapsedTime < 1500) {
+                    if (elapsedTime < 1000) {
                         randomSpeed = Math.random() * 5; // 1.5秒間は減速したまま
                     } else {
                         randomSpeed = Math.random() * 40; // 1.5秒経過後に加速
@@ -69,15 +115,7 @@ function startRace() {
                 }
             }
 
-            // 2頭目 (ディープインパクト) の加速・減速ロジック
-            if (horse.id === "ディープインパクト") {
-                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 3500) {
-                    randomSpeed = Math.random() * 10; // 最初の4秒は遅く走る
-                } else {
-                    randomSpeed = Math.random() * 35; // 4秒後は速く走る
-                }
-            }
+            
 
             horse.style.left = currentLeft + randomSpeed + 'px';
 
@@ -86,7 +124,7 @@ function startRace() {
 
             // ゴールドシップだけランダム移動を激しくする
             if (horse.id === "ゴールドシップ") {
-                randomVerticalMove = (Math.random() - 0.5) * 50; // 激しく移動
+                randomVerticalMove = (Math.random() - 0.5) * 40; // 激しく移動
             } else {
                 randomVerticalMove = (Math.random() - 0.5) * 4; // 他の馬は通常の移動
             }
