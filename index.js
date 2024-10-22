@@ -56,7 +56,7 @@ function startRace() {
             //1頭目
             if (horse.id === "リバティアイランド") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 3000) {
+                if (elapsedTime < 3500) {
                     randomSpeed = Math.random() * 23; // 最初の3秒は遅く走る
                 } else {
                     randomSpeed = Math.random() * 33; // 3秒後は速く走る
@@ -85,8 +85,7 @@ function startRace() {
 
             //4頭目
             if (horse.id === "べラジオオペラ") {
-                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                let randomSpeed = Math.random() * 31; // 馬の通常スピード
+                randomSpeed = Math.random() * 30; // 馬の通常スピード
             }
 
             //5頭目
@@ -102,7 +101,7 @@ function startRace() {
             //6頭目
             if (horse.id === "ジャスティンパレス") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 3000) {
+                if (elapsedTime < 3500) {
                     randomSpeed = Math.random() * 19; // 最初の3秒は遅く走る
                 } else {
                     randomSpeed = Math.random() * 34; // 3秒後は速く走る
@@ -111,8 +110,7 @@ function startRace() {
 
             //7頭目
             if (horse.id === "タスティエーラ") {
-                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                let randomSpeed = Math.random() * 30; // 馬の通常スピード
+                randomSpeed = Math.random() * 28; // 馬の通常スピード
             }
 
             //8頭目
