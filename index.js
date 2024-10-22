@@ -139,7 +139,7 @@ function startRace() {
                 if (elapsedTime < 5000) {
                     randomSpeed = Math.random() * 20; // 最初の5秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 37; // 5秒後は速く走る
+                    randomSpeed = Math.random() * 36; // 5秒後は速く走る
                 }
             }
 
