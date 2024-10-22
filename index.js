@@ -44,17 +44,123 @@ function startRace() {
             let randomSpeed = Math.random() * 25; // 馬の通常スピード
             
             // 1頭目 (サイレンススズカ) の加速・減速ロジック
-            if (horse.id === "サイレンススズカ") {
-                const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
-                if (elapsedTime < 2000) {
-                    randomSpeed = Math.random() * 55; // 最初の2秒は速く走る
+            // if (horse.id === "サイレンススズカ") {
+            //     const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
+            //     if (elapsedTime < 2000) {
+            //         randomSpeed = Math.random() * 55; // 最初の2秒は速く走る
+            //     } else {
+            //         randomSpeed = Math.random() * 19; // 2秒後は少し遅くなる
+            //     }
+            // }
+
+            //1頭目
+            if (horse.id === "リバティアイランド") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 23; // 最初の3秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 19; // 2秒後は少し遅くなる
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
                 }
             }
 
-            // 10頭目 (ドウデュース) の加速・減速ロジック
+            //2頭目
+            if (horse.id === "レーベンスティール") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 24; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 28; // 3秒後は速く走る
+                }
+            }
+
+            //3頭目
             if (horse.id === "ドウデュース") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 5000) {
+                    randomSpeed = Math.random() * 18; // 最初の5秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 35; // 5秒後は速く走る
+                }
+            }
+
+            //4頭目
+            if (horse.id === "べラジオオペラ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                let randomSpeed = Math.random() * 26; // 馬の通常スピード
+            }
+
+            //5頭目
+            if (horse.id === "ソールオリエンス") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //6頭目
+            if (horse.id === "ジャスティンパレス") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //7頭目
+            if (horse.id === "タスティエーラ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //8頭目
+            if (horse.id === "ホウオウビスケッツ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //9頭目
+            if (horse.id === "ノースブリッジ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            // 10頭目
+            if (horse.id === "ダノンベルーガ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //11頭目
+            if (horse.id === "キングズパレス") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //12頭目
+            if (horse.id === "リフレーミング") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 3000) {
                     randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
@@ -64,7 +170,7 @@ function startRace() {
             }
 
             // 13頭目 (べラジオオペラ) の加速・減速ロジック
-            if (horse.id === "べラジオオペラ") {
+            if (horse.id === "マテンロウスカイ") {
                 const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
                 if (elapsedTime < 5000) {
                     randomSpeed = Math.random() * 30; // 最初の5秒は速く走る
@@ -73,14 +179,29 @@ function startRace() {
                 }
             }
 
-            // 15頭目 (イクイノックス) の加速・減速ロジック
-            if (horse.id === "イクイノックス") {
-                randomSpeed = Math.random() * 26; // イクイノックスのみ少し早い
+            //14頭目
+            if (horse.id === "ステラヴェローチェ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
+            }
+
+            //15頭目
+            if (horse.id === "シルトホルン") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 3000) {
+                    randomSpeed = Math.random() * 10; // 最初の3秒は遅く走る
+                } else {
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
+                }
             }
 
 
             // 16頭目 (ディープインパクト) の加速・減速ロジック
-            if (horse.id === "ディープインパクト") {
+            if (horse.id === "ニシノレヴナント") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 3500) {
                     randomSpeed = Math.random() * 10; // 最初の4秒は遅く走る
@@ -90,7 +211,7 @@ function startRace() {
             }
 
             // 17頭目 (ダイワスカーレット) の加速・減速ロジック
-            if (horse.id === "ダイワスカーレット") {
+            if (horse.id === "サトノエルドール") {
                 const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
                 if (elapsedTime < 3000) {
                     randomSpeed = Math.random() * 37; // 最初の3秒は速く走る
@@ -99,21 +220,6 @@ function startRace() {
                 }
             }
 
-            // 18頭目 (オルフェーヴル) の減速・加速ロジック
-            if (horse.id === "オルフェーヴル") {
-                if (!slowDownOccurred && currentLeft > halfScreenWidth) {
-                    randomSpeed = Math.random() * 5; // 画面の半分で減速させる
-                    slowDownOccurred = true; // 減速開始フラグを立てる
-                    slowDownStartTime = Date.now(); // 減速開始の時刻を記録
-                } else if (slowDownOccurred) {
-                    const elapsedTime = Date.now() - slowDownStartTime; // 減速開始からの経過時間
-                    if (elapsedTime < 1000) {
-                        randomSpeed = Math.random() * 5; // 1.5秒間は減速したまま
-                    } else {
-                        randomSpeed = Math.random() * 40; // 1.5秒経過後に加速
-                    }
-                }
-            }
 
             
 
