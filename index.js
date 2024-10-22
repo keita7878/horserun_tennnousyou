@@ -119,7 +119,7 @@ function startRace() {
                 if (elapsedTime < 4000) {
                     randomSpeed = Math.random() * 42; // 最初の4秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 17; // 4秒後は速く走る
+                    randomSpeed = Math.random() * 18; // 4秒後は速く走る
                 }
             }
 
@@ -127,7 +127,7 @@ function startRace() {
             if (horse.id === "ノースブリッジ") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 5000) {
-                    randomSpeed = Math.random() * 32; // 最初の5秒は遅く走る
+                    randomSpeed = Math.random() * 33; // 最初の5秒は遅く走る
                 } else {
                     randomSpeed = Math.random() * 22; // 5秒後は速く走る
                 }
@@ -139,7 +139,7 @@ function startRace() {
                 if (elapsedTime < 5000) {
                     randomSpeed = Math.random() * 19; // 最初の5秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 35; // 5秒後は速く走る
+                    randomSpeed = Math.random() * 36; // 5秒後は速く走る
                 }
             }
 
@@ -149,7 +149,7 @@ function startRace() {
                 if (elapsedTime < 8000) {
                     randomSpeed = Math.random() * 25; // 最初の8秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 34; // 8秒後は速く走る
+                    randomSpeed = Math.random() * 35; // 8秒後は速く走る
                 }
             }
 
