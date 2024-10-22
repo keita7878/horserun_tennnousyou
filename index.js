@@ -146,10 +146,10 @@ function startRace() {
             //11頭目
             if (horse.id === "キングズパレス") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 8000) {
-                    randomSpeed = Math.random() * 25; // 最初の8秒は遅く走る
+                if (elapsedTime < 7000) {
+                    randomSpeed = Math.random() * 25; // 最初の7秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 35; // 8秒後は速く走る
+                    randomSpeed = Math.random() * 33; // 3秒後は速く走る
                 }
             }
 
