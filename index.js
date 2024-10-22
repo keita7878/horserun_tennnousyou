@@ -56,7 +56,7 @@ function startRace() {
             //1頭目
             if (horse.id === "リバティアイランド") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 3500) {
+                if (elapsedTime < 3000) {
                     randomSpeed = Math.random() * 23; // 最初の3秒は遅く走る
                 } else {
                     randomSpeed = Math.random() * 33; // 3秒後は速く走る
@@ -66,45 +66,45 @@ function startRace() {
             //2頭目
             if (horse.id === "レーベンスティール") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 3000) {
-                    randomSpeed = Math.random() * 24; // 最初の3秒は遅く走る
+                if (elapsedTime < 5000) {
+                    randomSpeed = Math.random() * 28; // 最初の3秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 28; // 3秒後は速く走る
+                    randomSpeed = Math.random() * 31; // 3秒後は速く走る
                 }
             }
 
             //3頭目
             if (horse.id === "ドウデュース") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 5000) {
-                    randomSpeed = Math.random() * 20; // 最初の5秒は遅く走る
+                if (elapsedTime < 4000) {
+                    randomSpeed = Math.random() * 20; // 最初の4秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 39; // 5秒後は速く走る
+                    randomSpeed = Math.random() * 36; // 4秒後は速く走る
                 }
             }
 
             //4頭目
             if (horse.id === "べラジオオペラ") {
-                randomSpeed = Math.random() * 30; // 馬の通常スピード
+                randomSpeed = Math.random() * 29; // 馬の通常スピード
             }
 
             //5頭目
             if (horse.id === "ソールオリエンス") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 5000) {
-                    randomSpeed = Math.random() * 20; // 最初の5秒は遅く走る
+                    randomSpeed = Math.random() * 22; // 最初の5秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 33; // 5秒後は速く走る
+                    randomSpeed = Math.random() * 35; // 5秒後は速く走る
                 }
             }
 
             //6頭目
             if (horse.id === "ジャスティンパレス") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 3500) {
-                    randomSpeed = Math.random() * 19; // 最初の3秒は遅く走る
+                if (elapsedTime < 4000) {
+                    randomSpeed = Math.random() * 16; // 最初の3秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 34; // 3秒後は速く走る
+                    randomSpeed = Math.random() * 37; // 3秒後は速く走る
                 }
             }
 
@@ -117,19 +117,19 @@ function startRace() {
             if (horse.id === "ホウオウビスケッツ") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 4000) {
-                    randomSpeed = Math.random() * 35; // 最初の4秒は遅く走る
+                    randomSpeed = Math.random() * 42; // 最初の4秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 22; // 4秒後は速く走る
+                    randomSpeed = Math.random() * 17; // 4秒後は速く走る
                 }
             }
 
             //9頭目
             if (horse.id === "ノースブリッジ") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 7000) {
-                    randomSpeed = Math.random() * 29; // 最初の7秒は遅く走る
+                if (elapsedTime < 5000) {
+                    randomSpeed = Math.random() * 32; // 最初の5秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 20; // 7秒後は速く走る
+                    randomSpeed = Math.random() * 22; // 5秒後は速く走る
                 }
             }
 
@@ -137,9 +137,9 @@ function startRace() {
             if (horse.id === "ダノンベルーガ") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 5000) {
-                    randomSpeed = Math.random() * 20; // 最初の5秒は遅く走る
+                    randomSpeed = Math.random() * 19; // 最初の5秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 36; // 5秒後は速く走る
+                    randomSpeed = Math.random() * 35; // 5秒後は速く走る
                 }
             }
 
@@ -147,9 +147,9 @@ function startRace() {
             if (horse.id === "キングズパレス") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 8000) {
-                    randomSpeed = Math.random() * 24; // 最初の8秒は遅く走る
+                    randomSpeed = Math.random() * 25; // 最初の8秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 27; // 8秒後は速く走る
+                    randomSpeed = Math.random() * 34; // 8秒後は速く走る
                 }
             }
 
@@ -159,17 +159,17 @@ function startRace() {
                 if (elapsedTime < 6000) {
                     randomSpeed = Math.random() * 23; // 最初の6秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 29; // 6秒後は速く走る
+                    randomSpeed = Math.random() * 33; // 6秒後は速く走る
                 }
             }
 
             // 13頭目
             if (horse.id === "マテンロウスカイ") {
-                const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 5000) {
                     randomSpeed = Math.random() * 30; // 最初の5秒は速く走る
                 } else {
-                    randomSpeed = Math.random() * 20; // 5秒後は少し遅くなる
+                    randomSpeed = Math.random() * 23; // 5秒後は少し遅くなる
                 }
             }
 
@@ -179,7 +179,7 @@ function startRace() {
                 if (elapsedTime < 5000) {
                     randomSpeed = Math.random() * 22; // 最初の3秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 33; // 3秒後は速く走る
+                    randomSpeed = Math.random() * 31; // 3秒後は速く走る
                 }
             }
 
@@ -187,9 +187,9 @@ function startRace() {
             if (horse.id === "シルトホルン") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 6000) {
-                    randomSpeed = Math.random() * 32; // 最初の6秒は遅く走る
+                    randomSpeed = Math.random() * 31; // 最初の6秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 20; // 6秒後は速く走る
+                    randomSpeed = Math.random() * 19; // 6秒後は速く走る
                 }
             }
 
@@ -197,20 +197,20 @@ function startRace() {
             // 16頭目
             if (horse.id === "ニシノレヴナント") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
-                if (elapsedTime < 5000) {
-                    randomSpeed = Math.random() * 19; // 最初の4秒は遅く走る
+                if (elapsedTime < 6000) {
+                    randomSpeed = Math.random() * 17; // 最初の6秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 37; // 4秒後は速く走る
+                    randomSpeed = Math.random() * 37; // 6秒後は速く走る
                 }
             }
 
-            // 17頭目 (ダイワスカーレット) の加速・減速ロジック
+            // 17頭目
             if (horse.id === "サトノエルドール") {
-                const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 4000) {
-                    randomSpeed = Math.random() * 12; // 最初の3秒は速く走る
+                    randomSpeed = Math.random() * 15; // 最初の3秒は速く走る
                 } else {
-                    randomSpeed = Math.random() * 35; // 3秒後は少し遅くなる
+                    randomSpeed = Math.random() * 31; // 3秒後は少し遅くなる
                 }
             }
 
