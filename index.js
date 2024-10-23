@@ -84,7 +84,7 @@ function startRace() {
             }
 
             //4頭目
-            if (horse.id === "べラジオオペラ") {
+            if (horse.id === "ベラジオオペラ") {
                 randomSpeed = Math.random() * 29; // 馬の通常スピード
             }
 
