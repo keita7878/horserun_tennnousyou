@@ -285,10 +285,10 @@ function showResults() {
     let tansho = first.odds;
 
     // 3連複のオッズ計算: 1着の馬 * 2着の馬 * 3着の馬 * 0.08
-    let trifectaOdds = first.odds * second.odds * third.odds * 0.08;
+    let trifectaOdds = first.odds * second.odds * third.odds * 0.12;
 
     // 三連単のオッズ計算: (1着の馬 * 1.3) * (2着の馬 * 1.15) * (3着の馬 * 1.08) * 0.2
-    let trioOdds = (first.odds * 1.3) * (second.odds * 1.15) * (third.odds * 1.08) * 0.2;
+    let trioOdds = ((first.odds * first.odds) * (second.odds * 1.18) * (third.odds * 1.05)) * 0.08;
 
     // オッズ情報を追加
     results += '\n--- オッズ情報 ---\n';
