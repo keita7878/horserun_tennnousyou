@@ -251,17 +251,42 @@ function endRace() {
 function showResults() {
     const positions = Array.from(horses).map(horse => ({
         id: horse.id,
-        number: horse.getAttribute('number'), //'number' 属性を取得
+        odds: parseFloat(horse.getAttribute('odds')), // oddsを浮動小数点数として解析
+        number: horse.getAttribute('number'), // 'number' 属性
         position: parseFloat(horse.style.left)
     }));
+
+    // 馬の位置を左から右へ進んでいる順に並べ替え
     positions.sort((a, b) => b.position - a.position);
-    
+
+    // 結果表示用の文字列
     let results = '着順 馬番 馬名\n';
-    positions.forEach((pos, index) => {
-        //スペースを追加して桁を揃える
-        let rank = (index + 1).toString().padStart(2, ' ');
-        results += `${rank}着: ${pos.number}, ${pos.id}\n`;
+
+    // 全馬の順位を表示
+    positions.forEach((horse, index) => {
+        results += `${index + 1}着: ${horse.number}, ${horse.id} (オッズ: ${horse.odds})\n`;
     });
 
+    // 上位3頭の馬を取り出す
+    let first = positions[0];
+    let second = positions[1];
+    let third = positions[2];
+
+    // 単勝のオッズ
+    let tansho = first.odds;
+
+    // 3連複のオッズ計算: 1着の馬 * 2着の馬 * 3着の馬 * 0.2
+    let trifectaOdds = first.odds * second.odds * third.odds * 0.08;
+
+    // 三連単のオッズ計算:
+    let trioOdds = (first.odds * 1.3) * (second.odds * 1.15) * (third.odds * 1.08) * 0.2;
+
+    // オッズ情報を追加
+    results += '\n【オッズ情報】\n';
+    results += `単勝: ${tansho.toFixed(2)}\n`;
+    results += `三連複: ${trifectaOdds.toFixed(2)}\n`;
+    results += `三連単: ${trioOdds.toFixed(2)}\n`;
+
+    // 結果を新しいウィンドウで表示
     window.open('results.html?results=' + encodeURIComponent(results), '_blank');
 }
