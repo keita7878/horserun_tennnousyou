@@ -214,6 +214,37 @@ function startRace() {
                 }
             }
 
+//----------------------------------------------------------------------------------------------
+            //歴代名馬
+            //18頭目
+            if (horse.id === "イクイノックス") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 5000) {
+                    randomSpeed = Math.random() * 29.5; // 最初の6秒は速く走る
+                } else {
+                    randomSpeed = Math.random() * 37.5; // 6秒後は少し遅くなる
+                }
+            }
+
+            if (horse.id === "サイレンススズカ") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 4000) {
+                    randomSpeed = Math.random() * 44; // 最初の6秒は速く走る
+                } else {
+                    randomSpeed = Math.random() * 27; // 6秒後は少し遅くなる
+                }
+            }
+
+            if (horse.id === "ディープインパクト") {
+                const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
+                if (elapsedTime < 6000) {
+                    randomSpeed = Math.random() * 21; // 最初の6秒は速く走る
+                } else {
+                    randomSpeed = Math.random() * 52; // 6秒後は少し遅くなる
+                }
+            }
+
+//----------------------------------------------------------------------------------------------
 
             
 
@@ -288,7 +319,7 @@ function showResults() {
     let trifectaOdds = first.odds * second.odds * third.odds * 0.12;
 
     // 三連単のオッズ計算: (1着の馬 * 1.3) * (2着の馬 * 1.15) * (3着の馬 * 1.08) * 0.2
-    let trioOdds = ((first.odds * first.odds) * (second.odds * 1.18) * (third.odds * 1.05)) * 0.08;
+    let trioOdds = ((first.odds ** 1.4) * (second.odds ** 1.2) * (third.odds ** 1.1)) * 0.15
 
     // オッズ情報を追加
     results += '\n--- オッズ情報 ---\n';
