@@ -263,7 +263,7 @@ function startRace() {
             clearInterval(raceInterval); // 距離が0になったらレースを終了。
             endRace();  // レース終了時の処理を呼び出す。
         }
-    }, 100);            // 100ミリ秒ごとにインターバル処理を実行。
+    }, 100);
 }
 
 function endRace() {
