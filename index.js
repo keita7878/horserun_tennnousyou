@@ -312,7 +312,7 @@ function showResults() {
     let trifectaOdds = first.odds * second.odds * third.odds * 0.12;
 
     // 三連単のオッズ計算: (1着の馬 * 1.3) * (2着の馬 * 1.15) * (3着の馬 * 1.08) * 0.2
-    let trioOdds = ((first.odds ** 1.35) * (second.odds ** 1.2) * (third.odds ** 1.1)) * 0.15
+    let trioOdds = ((first.odds ** 1.3) * (second.odds ** 1.2) * (third.odds ** 1.1)) * 0.2
 
     // オッズ情報を追加
     results += '\n--- オッズ情報 ---\n';
