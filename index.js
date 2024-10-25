@@ -30,29 +30,21 @@ function startCountdown() {
 }
 
 function startRace() {
-    let distance = 1000;
-    let slowDownOccurred = false; // オルフェーヴルの減速が開始されたかどうか
-    let slowDownStartTime = null; // 減速が始まった時刻
-    const halfScreenWidth = window.innerWidth / 2; // 画面の半分の幅を取得
-    
-    let silenceSuzukaStartTime = Date.now(); // サイレンススズカのレース開始時刻
-    let deepImpactStartTime = Date.now(); // ディープインパクトのレース開始時刻
+    let distance = 1000;                            // レースの総距離（m）。レースが進行するにつれて減少する。
+    let slowDownOccurred = false;                   // 特定の馬（例: オルフェーヴル）が減速を始めたかどうかを追跡するフラグ。
+    let slowDownStartTime = null;                   // 減速が始まった時刻を記録するための変数。
+    const halfScreenWidth = window.innerWidth / 2;  // 画面の半分の幅を取得。UIの描画などに使える。
 
+    let silenceSuzukaStartTime = Date.now();        // レースが始まった瞬間のサイレンススズカのスタート時刻を記録。
+    let deepImpactStartTime = Date.now();           // レースが始まった瞬間のディープインパクトのスタート時刻を記録。
+
+
+    // 一定時間ごとに馬の位置を更新するインターバル処理を開始
     raceInterval = setInterval(() => {
         horses.forEach(horse => {
-            const currentLeft = parseFloat(horse.style.left);
-            let randomSpeed = Math.random() * 25; // 馬の通常スピード
+            const currentLeft = parseFloat(horse.style.left); // 各馬の現在の左方向の位置を取得。
+            let randomSpeed = Math.random() * 25;             // 各馬の通常速度を設定。
             
-            // 1頭目 (サイレンススズカ) の加速・減速ロジック
-            // if (horse.id === "サイレンススズカ") {
-            //     const elapsedTime = Date.now() - silenceSuzukaStartTime; // 経過時間を取得
-            //     if (elapsedTime < 2000) {
-            //         randomSpeed = Math.random() * 55; // 最初の2秒は速く走る
-            //     } else {
-            //         randomSpeed = Math.random() * 19; // 2秒後は少し遅くなる
-            //     }
-            // }
-
             //1頭目
             if (horse.id === "リバティアイランド") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
@@ -260,18 +252,19 @@ function startRace() {
                 randomVerticalMove = (Math.random() - 0.5) * 4; // 他の馬は通常の移動
             }
 
-            horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 600) + 'px'; // 上下の最大値
+            // 上下移動が画面の範囲外に出ないように制御
+            horse.style.top = Math.min(Math.max(currentTop + randomVerticalMove, 0), 600) + 'px'; 
         });
 
-        distance -= 10;
-        distanceElement.textContent = `残り距離: ${distance}m`;
-        if (distance <= 0) {
-            clearInterval(raceInterval);
-            endRace();
-        }
-    }, 100);
-}
+        distance -= 10; // 残りの距離を10m減らす。
+        distanceElement.textContent = `残り距離: ${distance}m`; // 残りの距離を表示。
 
+        if (distance <= 0) {
+            clearInterval(raceInterval); // 距離が0になったらレースを終了。
+            endRace();  // レース終了時の処理を呼び出す。
+        }
+    }, 100);            // 100ミリ秒ごとにインターバル処理を実行。
+}
 
 function endRace() {
     clearInterval(raceInterval);
