@@ -269,7 +269,7 @@ function startRace() {
             clearInterval(raceInterval);
             endRace();
         }
-    }, 100);
+    }, 90);
 }
 
 
