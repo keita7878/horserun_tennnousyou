@@ -18,15 +18,21 @@ function startCountdown() {
     startBtn.disabled = true;
     endBtn.disabled = false;
     resultBtn.disabled = true;
-    const countdownInterval = setInterval(() => {
-        countdown--;
-        countdownElement.textContent = countdown;
-        if (countdown <= 0) {
-            clearInterval(countdownInterval);
-            countdownElement.style.display = 'none';
-            startRace();
-        }
-    }, 1000);
+    // ファンファーレ再生
+    fanfare.play();
+    
+    // ファンファーレ終了時にカウントダウンを開始
+    fanfare.onended = () => {
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.style.display = 'none';
+                startRace();
+            }
+        }, 1000);
+    };
 }
 
 function startRace() {
