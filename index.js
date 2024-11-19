@@ -13,21 +13,30 @@ resultBtn.addEventListener('click', showResults);
 
 
 function startCountdown() {
-    countdown = 3;
-    countdownElement.textContent = countdown;
-    countdownElement.style.display = 'block';
-    startBtn.disabled = true;
-    endBtn.disabled = false;
-    resultBtn.disabled = true;
-    const countdownInterval = setInterval(() => {
-        countdown--;
-        countdownElement.textContent = countdown;
-        if (countdown <= 0) {
-            clearInterval(countdownInterval);
-            countdownElement.style.display = 'none';
-            startRace();
-        }
-    }, 1000);
+    const fanfare = document.getElementById('fanfare'); // ファンファーレのオーディオ要素を取得
+    fanfare.currentTime = 0; // 再生位置を先頭にリセット
+    fanfare.play(); // ファンファーレを再生
+
+    // ファンファーレ終了後にカウントダウンを開始
+    fanfare.addEventListener('ended', () => {
+        countdown = 3; // カウントダウンの開始値を設定
+        countdownElement.textContent = countdown; // 初期のカウントダウンを表示
+        countdownElement.style.display = 'block'; // カウントダウン要素を表示
+        startBtn.disabled = true; // スタートボタンを無効化
+        endBtn.disabled = false; // 終了ボタンを有効化
+        resultBtn.disabled = true; // 結果ボタンを無効化
+
+        // カウントダウン処理
+        const countdownInterval = setInterval(() => {
+            countdown--; // カウントダウンを減らす
+            countdownElement.textContent = countdown; // カウントダウンを表示
+            if (countdown <= 0) {
+                clearInterval(countdownInterval); // カウントダウン終了
+                countdownElement.style.display = 'none'; // カウントダウンを非表示
+                startRace(); // レースを開始
+            }
+        }, 1000); // 1秒ごとに実行
+    }, { once: true }); // イベントリスナーを1回だけ実行
 }
 
 function startRace() {
@@ -50,9 +59,9 @@ function startRace() {
             if (horse.id === "リバティアイランド") {
                 const elapsedTime = Date.now() - deepImpactStartTime; // 経過時間を取得
                 if (elapsedTime < 3000) {
-                    randomSpeed = Math.random() * 23; // 最初の3秒は遅く走る
+                    randomSpeed = Math.random() * 24; // 最初の3秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 33; // 3秒後は速く走る
+                    randomSpeed = Math.random() * 30; // 3秒後は速く走る
                 }
             }
 
@@ -261,6 +270,7 @@ function startRace() {
         distanceElement.textContent = `残り距離: ${distance}m`; // 残りの距離を表示。
 
         if (distance <= 0) {
+            distance = 0; // 終了時に距離を0に固定
             clearInterval(raceInterval); // 距離が0になったらレースを終了。
             endRace();  // レース終了時の処理を呼び出す。
         }
