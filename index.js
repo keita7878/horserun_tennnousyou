@@ -81,7 +81,7 @@ function startRace() {
                 if (elapsedTime < 4000) {
                     randomSpeed = Math.random() * 20; // 最初の4秒は遅く走る
                 } else {
-                    randomSpeed = Math.random() * 36; // 4秒後は速く走る
+                    randomSpeed = Math.random() * 38; // 4秒後は速く走る
                 }
             }
 
